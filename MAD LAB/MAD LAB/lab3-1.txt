@@ -1,0 +1,88 @@
+abstract class Character {
+    protected String name;
+    protected boolean isKind;
+    protected boolean isObedient;
+    protected boolean isFighter;
+
+    public Character(String name, boolean isKind, boolean isObedient, boolean isFighter) {
+        this.name = name;
+        this.isKind = isKind;
+        this.isObedient = isObedient;
+        this.isFighter = isFighter;
+    }
+
+    public abstract void fight();
+    public abstract void obey();
+    public abstract void showCharacteristics();
+}
+
+class Pandav extends Character {
+    public Pandav(String name) {
+        super(name, true, true, true);
+    }
+
+    @Override
+    public void fight() {
+        System.out.println(name + " is a skilled fighter.");
+    }
+
+    @Override
+    public void obey() {
+        System.out.println(name + " is obedient.");
+    }
+
+    @Override
+    public void showCharacteristics() {
+        System.out.println(name + " is a Pandav with the following characteristics: ");
+        System.out.println("Kind: " + isKind);
+        System.out.println("Obedient: " + isObedient);
+        System.out.println("Fighter: " + isFighter);
+    }
+}
+
+class Kaurav extends Character {
+    public Kaurav(String name, boolean isNoble) {
+        super(name, !isNoble, !isNoble, true);
+    }
+
+    @Override
+    public void fight() {
+        System.out.println(name + " is a skilled fighter.");
+    }
+
+    @Override
+    public void obey() {
+        if (isObedient) {
+            System.out.println(name + " is obedient.");
+        } else {
+            System.out.println(name + " is not obedient.");
+        }
+    }
+
+    @Override
+    public void showCharacteristics() {
+        System.out.println(name + " is a Kaurav with the following characteristics: ");
+        System.out.println("Kind: " + isKind);
+        System.out.println("Obedient: " + isObedient);
+        System.out.println("Fighter: " + isFighter);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Pandav arjun = new Pandav("Arjun");
+        arjun.fight();
+        arjun.obey();
+        arjun.showCharacteristics();
+
+        Kaurav duryodhan = new Kaurav("Duryodhan", false);
+        duryodhan.fight();
+        duryodhan.obey();
+        duryodhan.showCharacteristics();
+
+        Kaurav vikarn = new Kaurav("Vikarn", true);
+        vikarn.fight();
+        vikarn.obey();
+        vikarn.showCharacteristics();
+    }
+}

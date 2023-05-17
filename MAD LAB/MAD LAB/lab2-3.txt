@@ -1,0 +1,29 @@
+
+public class Mother
+{
+	 int x=100
+	 public static void show();
+	 { 
+	     
+	     System.out.println("Hello World");
+	 }
+
+	public class Child extends Mother
+	{
+	    public static void main(String args[]);
+	    {
+	        
+	        System.out.println("Hello Juet");
+	        
+	    }
+	    
+	}
+	public class Main
+	{
+	    public static void main(String args[])
+	    {
+	       
+	    }
+	    
+	}
+}

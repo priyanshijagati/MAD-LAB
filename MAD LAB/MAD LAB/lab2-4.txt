@@ -1,0 +1,15 @@
+public class One
+{
+   int T;
+   One(int x);
+}
+public class Two extends One
+{
+    
+            
+}
+public class Main 
+{
+    One one=new One(32);
+    Two two =new Two();
+}

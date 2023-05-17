@@ -1,0 +1,95 @@
+abstract class Duck
+{
+    void show()
+    {
+        System.out.println("game of ducks");
+    }
+}
+interface Swimable
+{
+    void swim();
+}
+
+interface Flyable
+{
+    void fly();
+}
+
+interface Squeakable
+{
+    void squeak();
+}
+
+interface Quackable
+{
+    void quack();
+}
+
+class Rd implements Swimable,Flyable,Squeakable
+{
+    public void swim()
+    {
+        System.out.println(" RD can swim");
+    }
+    public void fly()
+    {
+        System.out.println(" RD can't fly");
+    }
+    public void squeak()
+    {
+        System.out.println(" RD can squeak");
+    }
+}
+
+class Wd implements Swimable,Flyable
+{
+    public void swim()
+    {
+        System.out.println(" WD can swim");
+    }
+    public void fly()
+    {
+        System.out.println(" WD can't fly");
+    }
+}
+
+class Rhd implements Swimable,Quackable
+{
+    public void swim()
+    {
+        System.out.println(" RHD can swim");
+    }
+    public void quack()
+    {
+        System.out.println(" RHD can quack");
+    }
+}
+
+class Ld implements Swimable,Quackable
+{
+    public void swim()
+    {
+        System.out.println(" LD can swim");
+    }
+    public void quack()
+    {
+        System.out.println(" LD can quack");
+    }
+}
+public class Main
+{
+    public static void main(String args[])
+    {
+        Rd rubberduck =new Rd();
+        rubberduck.swim();
+        
+        Wd woodenduck =new Wd();
+        woodenduck.fly();
+        
+        Rhd redheadduck =new Rhd();
+        redheadduck.quack();
+        
+        Ld lakeduck =new Ld();
+        lakeduck.swim();
+    }
+}
